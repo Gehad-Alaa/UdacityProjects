@@ -1,0 +1,71 @@
+
+window.addEventListener("scroll", ()=>{
+    items.forEach( (itemViewed) => {
+        const size = itemViewed.getBoundingClientRect();
+        console.log(size.top);
+        if (size.top = 100 && size.top <= 1000) {
+            const getitemViewed = itemViewed.classList.add("your-active-class");
+            console.log(getitemViewed); /*add class attribute to the section who is viewed*/
+            const dataNav = itemViewed.getAttribute("data-nav");
+            console.log(dataNav);/* get data-nav attribute for the section who is viewed */
+            const allAnchors = document.querySelectorAll("a"); 
+            allAnchors.forEach( (theA)=> {
+                if (theA === dataNav){
+                    theA.style.backgroung("black");
+                }else {
+                    theA.style.background("white");
+                }
+            })
+        }else {
+            const removeItemViewed = itemViewed.classList.remove("your-active-class");
+            console.log(removeItemViewed);
+        }
+    })
+    })
+
+function addClass (){
+    itemViewed.classList.add("your-active-class");
+}   
+function removeClass (){
+    itemViewed.classList.remove("your-active-class");
+}  
+
+function getAnchors (){
+    const dataNav = itemViewed.getAttribute("data-nav");
+    console.log(dataNav);/* get data-nav attribute for the section who is viewed */
+    const allAnchors = document.querySelectorAll("a"); 
+    allAnchors.forEach( (theA)=> {
+        if (theA === dataNav){
+            theA.style.backgroung("black");
+        }else {
+            theA.style.background("white");
+        }
+    })
+
+    window.addEventListener("scroll", ()=>{
+    items.forEach( (itemViewed) => {
+        const size = itemViewed.getBoundingClientRect();
+        console.log(size.top);
+        if (size.top = 100 && size.top <= 1000) {
+            addClass; /*add class attribute to the section who is viewed*/
+            
+        }else {
+            removeClass;
+        }
+    })
+    })
+
+    window.addEventListener("scroll", ()=>{
+    items.forEach( (itemViewed) => {
+        const size = itemViewed.getBoundingClientRect();
+        console.log(size.top);
+        if (size.top = 100 && size.top <= 1000) {
+            const getitemViewed = itemViewed.classList.add("your-active-class");
+            console.log(getitemViewed); /*add class attribute to the section who is viewed*/
+            getAnchors();
+        }else {
+            const removeItemViewed = itemViewed.classList.remove("your-active-class");
+            console.log(removeItemViewed);
+        }
+    })
+    })
